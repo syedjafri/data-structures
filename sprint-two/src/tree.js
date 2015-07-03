@@ -1,16 +1,12 @@
 var Tree = function(value){
   var newTree = {};
   newTree.value = value;
-
-  // your code here
-  newTree.children = [];  // fix me
-  // return keys of newTree object
+  newTree.children = []; 
+  // Extend with treeMethods
   _.extend(newTree, treeMethods);
+
   return newTree;
 };
-
-
-
 
 
 var treeMethods = {};
@@ -22,7 +18,8 @@ treeMethods.addChild = function(value){
 treeMethods.contains = function(target){
   // if tree value is equal to target, return true
   if (this.value === target) { return true; }
-  
+
+  //recursively call contains on tree children
   for (var i = 0; i < this.children.length; i++) {
     if (this.children[i].contains(target)) { return true; } 
   }
