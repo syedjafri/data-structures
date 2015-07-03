@@ -4,33 +4,20 @@ var LinkedList = function(){
   list.tail = null;
 
   list.addToTail = function(value){
-    //check head if null
-    //if empty
-    //add tail node to list
-    //add tail as head
-    //debugger;
     if (list.head === null){
       list.tail = new Node(value);
-      //insert node into list with node.value as key
-      list[value] = list.tail; // change value to node instance
-      //list[head.value] = null;
+      //insert node into list with value as key
+      list[value] = list.tail; 
       list.head = list.tail;
     } else {
-        //else 
-        //if head.next is null
-        if (list.head.next===null){
-          list.head.next = value;
-          list[value] = list.head; // change value to node instance
-        }
+      if (list.head.next===null){
+        list.head.next = value;
+        list[value] = list.head;
+      }
 
-          //update head.next with value
-          //update list[key] to value variable
-
-        //add new node instance to list
-        //assign this instance as tail
       list.tail = new Node(value);
       //insert node into list with node.value as key
-      list[value] = list.tail; // change value to node instance
+      list[value] = list.tail; 
 
     }
     return true;
