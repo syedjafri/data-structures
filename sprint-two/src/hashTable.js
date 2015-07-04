@@ -12,7 +12,7 @@ HashTable.prototype.insert = function(k, v){
     this._storage[i] = LinkedList();
    }
 
-    this._storage[i].addToTail(v);
+    this._storage[i].addToTail(v); //add k,v to enable search?
 };
 
 HashTable.prototype.retrieve = function(k){
